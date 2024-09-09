@@ -1,11 +1,14 @@
 import { useState } from "react"
+import { AddCategory } from './Components/AddCategory'
+import { GifGrid } from "./components/GifGrid"
 
 
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState([{id: 1 , name: 'One Punch'}, {id: 2, name: 'Dragon Ball'}])
-  const onAddCategory = () =>{
-     setCategories([...categories, 'Valorant'])
+  const [categories, setCategories] = useState(['One Punch'])
+  const onAddCategory = ( inputValue ) =>{
+     if(categories.includes(inputValue)) return;
+     setCategories([...categories, inputValue])
     //  setCategories(c => { //hay que cambiar el estado con setCategories
     //    c = [...categories]
     //    let lastId = 0
@@ -21,17 +24,13 @@ export const GifExpertApp = () => {
   return (
     <>
         <h1>Gift Expert App</h1>
-        <button onClick={onAddCategory}>Agregar</button>
-        <ol>
-          {
-            categories.map(category => {
-              return <li key={category.id}>{category.name}</li>
-            })
-          }
-          {/* <li>ABC</li>
-          <li>123</li>
-          <li>xyz</li> */}
-        </ol>
+        <AddCategory setCategories={ setCategories } onAddCategory={ onAddCategory }/>
+        {/* <button onClick={onAddCategory}>Agregar</button> */}
+        {
+          categories.map(category => 
+            <GifGrid key={category} category={category}/>
+          )
+        }
     </>
   )
 }

@@ -8,7 +8,7 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState(['One Punch'])
   const onAddCategory = ( inputValue ) =>{
      if(categories.includes(inputValue)) return;
-     setCategories([...categories, inputValue])
+     setCategories([inputValue, ...categories])
     //  setCategories(c => { //hay que cambiar el estado con setCategories
     //    c = [...categories]
     //    let lastId = 0

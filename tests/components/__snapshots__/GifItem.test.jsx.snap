@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <GifItem/> Should render a gif item 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Dragon Ball GIF by Toei Animation"
+      src="https://media0.giphy.com/media/GRSnxyhJnPsaQy9YLn/giphy.gif?cid=6f627e39y19ungcan8ud6bcsg1ummryhpr2xvibmjsft10qo&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    />
+    <p>
+      Dragon Ball GIF by Toei Animation
+    </p>
+  </div>
+</div>
+`;
